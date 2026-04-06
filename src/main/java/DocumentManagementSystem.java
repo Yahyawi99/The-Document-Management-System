@@ -1,7 +1,11 @@
 public class DocumentManagementSystem {
-  // public static void main(String args[]){
+  private final Map<String, Importer> extensionToImporter = new HashMap<>;
 
-  // }
+  public DocumentManagementSystem(){
+extensionToImporter.put('letter',new LetterImporter())
+extensionToImporter.put('report',new ReportImporter())
+extensionToImporter.put('jpg',new ImageImporter())
+  }
 
   void importFile(String path){
 
