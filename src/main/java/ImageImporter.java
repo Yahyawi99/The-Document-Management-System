@@ -1,9 +1,14 @@
-class ReportImporter implements Importer {
-  public Document importFile (final File file) throws IOException {
-final Map<String, String> attributes = new HashMap<>;
+import java.util.*;
+import java.io.*;
 
-attributes.put(PATH,file.getPath())
+class ImageImporter implements Importer {
+  private static final String PATH = "path";
 
-return new Document(attributes)
+  public Document importFile(final File file) throws IOException {
+    final Map<String, String> attributes = new HashMap<>();
+
+    attributes.put(PATH, file.getPath());
+
+    return new Document(attributes);
   }
 }

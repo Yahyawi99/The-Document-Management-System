@@ -1,15 +1,19 @@
+import java.util.*;
+
 public class DocumentManagementSystem {
-  private final Map<String, Importer> extensionToImporter = new HashMap<>;
+  private final Map<String, Importer> extensionToImporter = new HashMap<>();
 
   public DocumentManagementSystem(){
-extensionToImporter.put('letter',new LetterImporter())
-extensionToImporter.put('report',new ReportImporter())
-extensionToImporter.put('jpg',new ImageImporter())
+extensionToImporter.put("letter", new LetterImporter());
+extensionToImporter.put("report", new ReportImporter());
+extensionToImporter.put("jpg", new ImageImporter());
   }
 
-  void importFile(String path){
+  void importFile(String path) {
 
   }
 
-  List<Document> contents(){}
+  List<Document> contents() {
+    return Collections.emptyList();
+  }
 }

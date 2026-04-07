@@ -1,9 +1,14 @@
+import java.util.*;
+import java.io.*;
+
 class LetterImporter implements Importer {
-  public Document importFile (final File file) throws IOException {
-final Map<String, String> attributes = new HashMap<>;
+  private static final String PATH = "path";
 
-attributes.put(PATH,file.getPath())
+  public Document importFile(final File file) throws IOException {
+    final Map<String, String> attributes = new HashMap<>();
 
-return new Document(attributes)
+    attributes.put(PATH, file.getPath());
+
+    return new Document(attributes);
   }
 }
