@@ -2,14 +2,16 @@ import java.io.*;
 import java.nio.file.*;
 import java.util.*;
 import java.util.function.Predicate;
+import static java.util.stream.Collectors.toList;
 
 class TextFile {
-  private final Map<String, String> attributes = new HashMap<>();
+  private final Map<String, String> attributes;
   private final List<String> lines;
 
   TextFile(final File file) throws IOException {
+    attributes = new HashMap<>();
     attributes.put(Attributes.PATH, file.getPath());
-    lines = Files.readAllLines(file.toPath());
+    lines = Files.lines(file.toPath()).collect(toList());
   }
 
   void addLineSuffix(final String prefix, final String attributeName) {
