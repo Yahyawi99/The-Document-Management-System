@@ -10,4 +10,5 @@ public class Document {
   public String getAttributes(final String attributeName) {
     return attributes.get(attributeName);
   }
+
 }

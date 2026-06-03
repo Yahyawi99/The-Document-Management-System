@@ -39,6 +39,6 @@ public class DocumentManagementSystem {
   }
 
   List<Document> contents() {
-    return Collections.emptyList();
+    return documents;
   }
 }
