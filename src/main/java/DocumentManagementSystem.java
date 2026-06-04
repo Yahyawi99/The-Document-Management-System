@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class DocumentManagementSystem {
   private final Map<String, Importer> extensionToImporter = new HashMap<>();
@@ -40,5 +41,11 @@ public class DocumentManagementSystem {
 
   List<Document> contents() {
     return documents;
+  }
+
+  public List<Document> search(final String query) {
+    return documents.stream()
+        .filter(Query.parse(query))
+        .collect(Collectors.toList());
   }
 }
